@@ -1,7 +1,6 @@
 package hamming
 
 import (
-	"strings"
 	"errors"
 )
 
@@ -10,12 +9,10 @@ func Distance(a, b string) (int, error) {
 		return -1, errors.New("Boom!!")
 	}
 
-	aSplit := strings.Split(a, "")
-	bSplit := strings.Split(b, "")
 	n := 0
 
-	for i := range aSplit {
-		if aSplit[i] != bSplit[i] {
+	for i := range a {
+		if a[i] != b[i] {
 			n++
 		}
 	}
